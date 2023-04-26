@@ -1,3 +1,5 @@
+@Library('my-shared-library1') _
+
 pipeline{
 
     agent any
@@ -8,11 +10,15 @@ pipeline{
 
             steps{
 
-                script{
+             gitCheckout(
+                branch: "main",
+                url: "https://github.com/kennymath/java-project-app2.git"
 
-                    git branch: 'main', url: 'https://github.com/kennymath/java-project-app2.git'
-                }
+            )
             }
+
+
         }
+
     }
 }
