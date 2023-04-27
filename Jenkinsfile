@@ -103,7 +103,7 @@ pipeline{
                }
             }
         }
-        stage('Docker Image Push : DockerHub'){
+        stage('Docker Image Push : Dockerhub-id'){
                  when { expression {  params.action == 'create' } }
             steps{
                script{
@@ -112,7 +112,7 @@ pipeline{
                }
             }
         }  
-        stage('Docker Image Cleanup : DockerHub '){
+        stage('Docker Image Cleanup : Dockerhub-id '){
                 when { expression {  params.action == 'create' } }
             steps{
                script{
