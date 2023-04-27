@@ -103,7 +103,7 @@ pipeline{
                }
             }
         }
-        stage('Docker Image Push : DockerHub'){
+        stage('Docker Image Push : DockerHub-1d'){
                  when { expression {  params.action == 'create' } }
             steps{
                script{
@@ -111,8 +111,9 @@ pipeline{
                    dockerImagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
-        }  stage('Docker Image Cleanup : DockerHub '){
-         when { expression {  params.action == 'create' } }
+        }  
+        stage('Docker Image Cleanup : DockerHub '){
+                when { expression {  params.action == 'create' } }
             steps{
                script{
                    
