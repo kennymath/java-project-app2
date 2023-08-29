@@ -21,7 +21,7 @@ pipeline{
             steps{
 
              gitCheckout(
-                branch: "main",
+               git branch: "main",
                 url: "https://github.com/kennymath/java-project-app2.git"
 
             )
